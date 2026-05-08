@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Web Development Flashcards</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Steven Chen" />
+    <meta name="description" content="Study flashcards for web development" />
+    <meta
+      name="keywords"
+      content="study guide, flashcards, learning materials"
+    />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="assets/vendor/normalize.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/carousel.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  </head>
+  <body class="page">
+    <header class="header">
+      <h1 class="header__title">
+        <a class="header__link text-style" href="#home">Flash Cards</a> 
+      </h1>
+      <nav class="nav">
+        <ul class="nav__links">
+          <li class="nav__link text-style"><a href="#home">My Decks</a></li>
+          <li class="nav__link text-style"><a href="#about">About</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="page__main-content">
+      <div class="decks">
+        <p class="decks__title text-style">My Decks</p>
+        <div class="decks__list">
+          <ul>
+            <template id="deck-template">
+              <li class="deck">
+                <a class="deck__link" href="#"></a>
+                <p class="deck__title text-style"></p>
+                <div class="deck__row">
+                  <p class="deck__count text-style"></p>
+                  <button class="deck__delete-btn" data-deckId="" aria-label="Delete this deck." type="button">
+                    <img class="deck__delete-btn__img" alt="Delete this deck." src="assets/images/delete.svg">
+                  </button>
+                </div>
+              </li>
+            </template>
+          </ul>
+          <button class="decks__new-decks-btn" aria-label="Add new deck." type="button">+ New Decks</button>
+        </div>
+      </div>
+      <div class="carousel">
+        <h2 class="carousel__title text-style">HTML Tags Deck &middot; 1/10</h2>
+        <div class="carousel__main_layout">
+          <button class="carousel__btn_type_left carousel__btn carousel__btn_disabled" type="submit" aria-label="Move to previous card."><img alt="Move to previous card." src="assets/images/left.svg"></button>
+          <div class="carousel__card">
+            <p class="carousel__card-text text-style">&lt;body&gt;&lt;/body&gt;</p>
+          </div>
+          <button class="carousel__btn_type_right carousel__btn" type="submit" aria-label="Move to next card."><img alt="Move to next card." src="assets/images/right.svg"></button>
+        </div>
+        <button class="carousel__btn_type_flip carousel__btn" type="submit" aria-label="Flip the card."><img alt="Flip the card." src="assets/images/flip.svg"></button>
+      </div>
+      <section id="not-found" class="not-found">
+        <h2 class="not-found__title">404 Not Found</h2>
+        <p class="not-found__text">Oops! We can't find that.</p>
+      </section>
+      <script type="module" src="assets/js/index.js"></script>
+    </main>
+    <footer class="footer">
+      <div class="footer__content">
+        <p class="footer__content__title text-style">&copy; 2026 Steven Chen</p>
+      </div>
+    </footer>
+  </body>
+</html>

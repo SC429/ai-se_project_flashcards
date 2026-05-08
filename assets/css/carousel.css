@@ -1,0 +1,86 @@
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.carousel__card {
+    width: 440px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 32px 20px 24px;
+}
+
+.carousel__title {
+    font-weight: 500;
+    font-size: 14px;
+    color: #1a1a1a80;
+    margin-top: 106px;
+}
+
+.carousel__main_layout {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.carousel__card-text {
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.carousel__btn {
+    background-color: #fff;
+    border-style: none;
+    width: 44px;
+    height: 44px;
+    opacity: 50%;
+}
+
+.carousel__btn_disabled {
+    opacity: 20%;
+}
+
+.carousel__btn:hover {
+    opacity: 100%;
+}
+
+img {
+    background-color: #fff;
+    opacity: 50%;
+    border-style: none;
+}
+
+.carousel__card_color_green {
+    background-color: #64d583;
+}
+
+.carousel__card_color_blue {
+    background-color: #64b5d8;
+}
+
+.carousel__card_color_pink {
+    background-color: #ee92d7;
+}
+
+.carousel__card_color_purple {
+    background-color: #aa8ef0;
+}
+
+.carousel__card_color_orange {
+    background-color: #ee955e;
+}
+
+.carousel__card_color_yellow {
+    background-color: #f5d770;
+}
+
+.carousel__card_color_white {
+    background-color: #fff;
+}
