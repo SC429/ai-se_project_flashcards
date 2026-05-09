@@ -2,7 +2,9 @@
 
 ## Description
 
-### This website provides a useful tool to create/delete study decks. It presents the deck in a carousel view.
+### This website provides a useful tool to create/delete study decks. It presents the deck in a carousel view. 
+
+Check out [this project](https://sc429.github.io/ai-se_project_flashcards/)
 
 ## Feature
 
