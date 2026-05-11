@@ -46,9 +46,45 @@
               </li>
             </template>
           </ul>
-          <button class="gallery__new-card-btn" aria-label="Add new deck." type="button">+ New Decks</button>
+          <button class="gallery__new-deck-btn" aria-label="Add new deck." type="button">+ New Deck</button>
         </div>
       </div>
+      <section id="deck-view" class="gallery">
+        <div class="gallery__header">
+          <p class="gallery__title text-style"></p>
+          <button class="practice-btn" aria-label="Practice this deck." type="button">Practice</button>
+        </div>
+        <div class="gallery__list">
+          <ul>
+            <!-- <template id="deck-template">
+              <li class="card">
+                <a class="card__link" href="#"></a>
+                <p class="card__title text-style"></p>
+                <div class="card__row">
+                  <p class="card__count text-style"></p>
+                  <button class="card__delete-btn" data-deckId="" aria-label="Delete this deck." type="button">
+                    <img class="card__delete-btn__img" alt="Delete this deck." src="assets/images/delete.svg">
+                  </button>
+                </div>
+              </li>
+            </template> -->
+            <template id="card-template">
+              <li class="card">
+                <p class="card__title text-style"></p>
+                <div class="card__row">
+                  <button class="card__flip-btn" aria-label="Flip the card" type="button">
+                    <img class="card__flip-btn__img" alt="Flip the card" src="assets/images/flip.svg">
+                  </button>
+                  <button class="card__delete-btn" data-deckId="" aria-label="Delete this deck." type="button">
+                    <img class="card__delete-btn__img" alt="Delete this deck." src="assets/images/delete.svg">
+                  </button>
+                </div>
+              </li>
+            </template>
+          </ul>
+          <button class="gallery__new-card-btn" aria-label="Add new card." type="button">+ New Card</button>
+        </div>
+      </section>
       <div class="carousel">
         <h2 class="carousel__title text-style">HTML Tags Deck &middot; 1/10</h2>
         <div class="carousel__main_layout">
