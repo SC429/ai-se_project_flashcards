@@ -1,0 +1,16 @@
+.page {
+  background-color: #ececec;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 20px 40px 32px;
+  max-width: 1440px;
+  margin: 0 auto; /* centered the content on different screens */
+}
+
+.page__main-content {
+  flex-grow: 1;
+  margin-bottom: 138px;
+  margin-top: 60px;
+}

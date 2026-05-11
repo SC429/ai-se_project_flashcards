@@ -1,0 +1,23 @@
+.nav {
+ float: right;
+}
+
+.nav__links {
+  list-style-type: none;
+  flex-direction: row;
+  display: flex;
+  font-weight: 500;
+  font-size: 16px;
+  align-items: center;
+}
+
+.nav__link {
+  font-weight: 500;
+  font-size: 16px;
+  margin-left: 20px;
+  float: left;
+}
+
+.nav__link:hover {
+  text-decoration: underline;
+}
