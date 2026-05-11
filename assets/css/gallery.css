@@ -15,7 +15,7 @@
   list-style-type: none;
 }
 
-.gallery__new-decks-btn {
+.gallery__new-card-btn {
   box-sizing: border-box;
   background-color: #d9d9d9;
   border-radius: 20px;
@@ -37,7 +37,7 @@
   font-family: "Inter", Arial, Helvetica, sans-serif;
 }
 
-.gallery__new-decks-btn:hover {
+.gallery__new-card-btn:hover {
   background-color: #c5c5c5;
   color: #1a1a1a;
 }

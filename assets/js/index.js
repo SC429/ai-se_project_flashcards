@@ -12,7 +12,7 @@ if (!templateEl || !deckListEl) {
     const templateClone = templateEl.content.cloneNode(true); // clone the template
     templateEl.remove(); // removes the original template element from the DOM
 
-    const newDeckBtn = document.querySelector('.gallery__new-decks-btn');
+    const newDeckBtn = document.querySelector('.gallery__new-card-btn');
     const newDeckBtnClone = newDeckBtn.cloneNode(true);
     newDeckBtn.remove();
 
