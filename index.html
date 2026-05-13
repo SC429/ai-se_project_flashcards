@@ -19,7 +19,7 @@
   <body class="page">
     <header class="header">
       <h1 class="header__title">
-        <a class="header__link text-style" href="#home">Flash Cards</a> 
+        <a class="header__link text-style" href="#home">Flash Cards</a>
       </h1>
       <nav class="nav">
         <ul class="nav__links">
@@ -29,7 +29,7 @@
       </nav>
     </header>
     <main class="page__main-content">
-      <div class="gallery">
+      <section id="home" class="gallery">
         <p class="gallery__title text-style">My Decks</p>
         <div class="gallery__list">
           <ul>
@@ -48,7 +48,7 @@
           </ul>
           <button class="gallery__new-deck-btn" aria-label="Add new deck." type="button">+ New Deck</button>
         </div>
-      </div>
+      </section>
       <section id="deck-view" class="gallery">
         <div class="gallery__header">
           <p class="gallery__title text-style"></p>
@@ -56,27 +56,15 @@
         </div>
         <div class="gallery__list">
           <ul>
-            <!-- <template id="deck-template">
-              <li class="card">
-                <a class="card__link" href="#"></a>
-                <p class="card__title text-style"></p>
-                <div class="card__row">
-                  <p class="card__count text-style"></p>
-                  <button class="card__delete-btn" data-deckId="" aria-label="Delete this deck." type="button">
-                    <img class="card__delete-btn__img" alt="Delete this deck." src="assets/images/delete.svg">
-                  </button>
-                </div>
-              </li>
-            </template> -->
             <template id="card-template">
               <li class="card">
                 <p class="card__title text-style"></p>
                 <div class="card__row">
-                  <button class="card__flip-btn" aria-label="Flip the card" type="button">
-                    <img class="card__flip-btn__img" alt="Flip the card" src="assets/images/flip.svg">
+                  <button class="card__flip-btn" aria-label="Flip the card." type="button">
+                    <img class="card__flip-btn__img" alt="Flip the card." src="assets/images/flip.svg">
                   </button>
-                  <button class="card__delete-btn" data-deckId="" aria-label="Delete this deck." type="button">
-                    <img class="card__delete-btn__img" alt="Delete this deck." src="assets/images/delete.svg">
+                  <button class="card__delete-btn" aria-label="Delete this card." type="button">
+                    <img class="card__delete-btn__img" alt="Delete this card." src="assets/images/delete.svg">
                   </button>
                 </div>
               </li>

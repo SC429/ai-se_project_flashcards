@@ -42,7 +42,8 @@
   line-height: 1.2;
 }
 
-.card__delete-btn {
+.card__delete-btn,
+.card__flip-btn {
   width: 24px;
   height: 24px;
   background-color: transparent;
@@ -52,14 +53,13 @@
   z-index: 2;
 }
 
-.card__delete-btn__img {
+.card__delete-btn__img,
+.card__flip-btn__img {
   background-color: transparent;
 }
 
-.card__delete-btn:hover {
-  background-color: #c5c5c5;
-  color: #1a1a1a;
-  text-decoration: underline;
+.card__delete-btn:hover,
+.card__flip-btn:hover {
   opacity: 100%;
 }
 
@@ -85,4 +85,8 @@
 
 .card_color_yellow {
   background-color: #f5d770;
+}
+
+.card_color_white {
+  background-color: #fff;
 }
