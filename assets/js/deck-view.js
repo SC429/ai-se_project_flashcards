@@ -17,11 +17,13 @@ practiceBtn.addEventListener('click', () => {
 });
 
 function createCardEl(card, deck) {
-    const clone = cardTemplate.content.cloneNode(true);
-    const cardEl = clone.querySelector('.card');
-    const titleEl = clone.querySelector('.card__title');
-    const flipBtn = clone.querySelector('.card__flip-btn');
-    const deleteBtn = clone.querySelector('.card__delete-btn');
+
+    // create a copy of the card template
+    const cardTempClone = cardTemplate.content.cloneNode(true);
+    const cardEl = cardTempClone.querySelector('.card');
+    const titleEl = cardTempClone.querySelector('.card__title');
+    const flipBtn = cardTempClone.querySelector('.card__flip-btn');
+    const deleteBtn = cardTempClone.querySelector('.card__delete-btn');
 
     const baseColorClass = `card_color_${hexToString(deck.color)}`;
     cardEl.classList.add(baseColorClass);
@@ -45,7 +47,7 @@ function createCardEl(card, deck) {
         cardEl.remove();
     });
 
-    return clone;
+    return cardTempClone;
 }
 
 export function renderDeckView(deck) {

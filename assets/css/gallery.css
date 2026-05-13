@@ -9,9 +9,9 @@
 }
 
 .gallery__list {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 20px;
-  flex-wrap: wrap;
 }
 
 .gallery__list ul {
@@ -24,8 +24,8 @@
   box-sizing: border-box;
   background-color: #d9d9d9;
   border-radius: 20px;
-  width: 325px;
-  height: 205px;
+  width: 100%;
+  aspect-ratio: 325 / 205;
   display: flex;
   padding: 20px;
   border-style: none;

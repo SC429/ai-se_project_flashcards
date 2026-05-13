@@ -14,12 +14,12 @@ const deckListEl = homeSection.querySelector('.gallery__list ul');
 
 // build a single deck tile for the home gallery
 function createDeckEl(deck) {
-    const clone = deckTemplate.content.cloneNode(true);
-    const cardEl = clone.querySelector('.card');
-    const linkEl = clone.querySelector('.card__link');
-    const titleEl = clone.querySelector('.card__title');
-    const countEl = clone.querySelector('.card__count');
-    const deleteBtn = clone.querySelector('.card__delete-btn');
+    const deckClone = deckTemplate.content.cloneNode(true);
+    const cardEl = deckClone.querySelector('.card');
+    const linkEl = deckClone.querySelector('.card__link');
+    const titleEl = deckClone.querySelector('.card__title');
+    const countEl = deckClone.querySelector('.card__count');
+    const deleteBtn = deckClone.querySelector('.card__delete-btn');
 
     cardEl.classList.add(`card_color_${hexToString(deck.color)}`);
     titleEl.textContent = deck.name;
@@ -36,7 +36,7 @@ function createDeckEl(deck) {
         cardEl.remove();
     });
 
-    return clone;
+    return deckClone;
 }
 
 function renderHome() {

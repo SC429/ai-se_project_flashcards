@@ -27,15 +27,15 @@ function renderCarouselView(deck) {
     // toggle the buttons
     function updateArrows() {
         if (currentIndex === 0) {
-        disableButton(leftBtn);
+            disableButton(leftBtn);
         } else {
-        enableButton(leftBtn);
+            enableButton(leftBtn);
         }
 
         if (currentIndex === deck.cards.length - 1) {
-        disableButton(rightBtn);
+            disableButton(rightBtn);
         } else {
-        enableButton(rightBtn);
+            enableButton(rightBtn);
         }
     }
 
