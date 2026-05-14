@@ -58,7 +58,8 @@ function renderCarouselView(deck) {
         updateArrows();
     }
 
-
+    // add event listeners to buttons to update index and 
+    // return the view to the question when a new card is displayed
     rightBtn.addEventListener("click", () => {
         if (currentIndex < deck.cards.length - 1) {
         currentIndex++;
@@ -81,7 +82,6 @@ function renderCarouselView(deck) {
     });
 
     updateDisplay();
-
 }
 
 export { renderCarouselView };
