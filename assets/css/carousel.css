@@ -15,6 +15,7 @@
     padding: 20px;
     border-radius: 20px;
     margin: 32px 20px 24px;
+    box-sizing: border-box;
 }
 
 .carousel__title {
@@ -24,10 +25,33 @@
     margin-top: 106px;
 }
 
-.carousel__main_layout {
-    display: flex;
-    flex-wrap: wrap;
+.carousel__grid {
+    display: grid;
+    grid-template-areas:
+      "left card right"
+      ". flip .";
     align-items: center;
+    justify-items: center;
+    column-gap: 20px;
+}
+
+.carousel__btn_type_left { 
+    grid-area: left; 
+    justify-self: start; 
+}
+
+.carousel__card { 
+    grid-area: card; 
+}
+
+.carousel__btn_type_right { 
+    grid-area: right; 
+    justify-self: end; 
+}
+
+.carousel__btn_type_flip { 
+    grid-area: flip; 
+    justify-self: center; 
 }
 
 .carousel__card-text {
@@ -47,7 +71,7 @@
     opacity: 20%;
 }
 
-.carousel__btn:hover {
+.carousel__btn:not(.carousel__btn_disabled):hover {
     opacity: 100%;
 }
 

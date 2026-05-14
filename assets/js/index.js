@@ -3,6 +3,7 @@ import { renderCarouselView } from "./carousel.js";
 import { hexToString } from "./colorMap.js";
 import { renderDeckView, setCurrentDeck } from "./deck-view.js";
 
+const pageEl = document.querySelector('.page');
 const homeSection = document.querySelector('#home');
 const deckViewSection = document.querySelector('#deck-view');
 const carouselSection = document.querySelector('.carousel');
@@ -57,6 +58,7 @@ function renderSection() {
     const hash = window.location.hash;
 
     if (hash === '' || hash === '#home' || hash === '#decks') {
+        pageEl.classList.remove('page_no-mobile-bar');
         showSection(homeSection);
         return;
     }
@@ -75,6 +77,7 @@ function renderSection() {
     if (hash.startsWith('#carousel/')) {
         const deck = getDeckByID(hash.split('/')[1]);
         if (deck) {
+            pageEl.classList.add('page_no-mobile-bar');
             renderCarouselView(deck);
             showSection(carouselSection);
         } else {
@@ -84,6 +87,7 @@ function renderSection() {
     }
 
     if (hash === '#not-found') {
+        pageEl.classList.add('page_no-mobile-bar');
         showSection(notFoundSection);
         return;
     }

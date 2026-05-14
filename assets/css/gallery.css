@@ -51,7 +51,7 @@
     margin-bottom: 40px;
 }
 
-.practice-btn {
+.gallery__practice-btn {
   background-color: #1a1a1a;
   color: #fff;
   font-family: "Inter", Arial, Helvetica, sans-serif;
@@ -63,6 +63,6 @@
   cursor: pointer;
 }
 
-.practice-btn:hover {
+.gallery__practice-btn:hover {
   background-color: #333;
 }

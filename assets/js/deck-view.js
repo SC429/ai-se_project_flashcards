@@ -1,10 +1,11 @@
 import { hexToString } from "./colorMap.js";
 
+const pageEl = document.querySelector('.page');
 const deckViewSection = document.querySelector('#deck-view');
 const cardTemplate = document.querySelector('#card-template');
 const cardListEl = deckViewSection.querySelector('.gallery__list ul');
 const deckViewTitle = deckViewSection.querySelector('.gallery__title');
-const practiceBtn = deckViewSection.querySelector('.practice-btn');
+const practiceBtn = deckViewSection.querySelector('.gallery__practice-btn');
 
 let currentDeck = null;
 
@@ -51,6 +52,7 @@ function createCardEl(card, deck) {
 }
 
 export function renderDeckView(deck) {
+    pageEl.classList.remove('page_no-mobile-bar');
     deckViewTitle.textContent = deck.name;
 
     cardListEl.replaceChildren();
