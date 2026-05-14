@@ -28,6 +28,7 @@
     pointer-events: none;
     z-index: 50;
   }
+
   .page_no-mobile-bar::after {
     display: none;
   }
@@ -41,6 +42,7 @@
     margin-top: 0;
     z-index: 60;
   }
+
   .page_no-mobile-bar .footer {
     position: static;
   }
@@ -117,7 +119,6 @@
     height: auto;
     aspect-ratio: 4 / 5;
     margin: 0;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
   }
   .carousel__card-text {
     font-size: 28px;
@@ -127,7 +128,6 @@
     height: 48px;
     border-radius: 10px;
     background-color: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     opacity: 1;
     display: flex;
     align-items: center;
