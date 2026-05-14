@@ -97,4 +97,6 @@ function renderSection() {
 
 renderHome();
 renderSection();
+
+// render the section if browser's hash change
 window.addEventListener('hashchange', renderSection);
