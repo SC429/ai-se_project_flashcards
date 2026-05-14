@@ -3,14 +3,13 @@ import { renderCarouselView } from "./carousel.js";
 import { hexToString } from "./colorMap.js";
 import { renderDeckView, setCurrentDeck } from "./deck-view.js";
 
+// select the elements for each section
 const pageEl = document.querySelector('.page');
 const homeSection = document.querySelector('#home');
 const deckViewSection = document.querySelector('#deck-view');
 const carouselSection = document.querySelector('.carousel');
 const notFoundSection = document.querySelector('.not-found');
-
 const deckTemplate = document.querySelector('#deck-template');
-
 const deckListEl = homeSection.querySelector('.gallery__list ul');
 
 // build a single deck tile for the home gallery

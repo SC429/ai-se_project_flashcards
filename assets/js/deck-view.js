@@ -25,7 +25,6 @@ function createCardEl(card, deck) {
     const titleEl = cardTempClone.querySelector('.card__title');
     const flipBtn = cardTempClone.querySelector('.card__flip-btn');
     const deleteBtn = cardTempClone.querySelector('.card__delete-btn');
-
     const baseColorClass = `card_color_${hexToString(deck.color)}`;
     cardEl.classList.add(baseColorClass);
     titleEl.textContent = card.question;
@@ -52,7 +51,7 @@ function createCardEl(card, deck) {
 }
 
 export function renderDeckView(deck) {
-    pageEl.classList.remove('page_no-mobile-bar');
+    pageEl.classList.remove('page_no-mobile-bar'); // remove the class if its not mobile view
     deckViewTitle.textContent = deck.name;
 
     cardListEl.replaceChildren();

@@ -45,6 +45,7 @@ function renderCarouselView(deck) {
         currentCard = deck.cards[currentIndex];
         carouselTitle.textContent = `${deck.name} ${currentIndex + 1}/${deck.cards.length}`;
 
+        // flips the card to show question or answer and update the color accordingly
         if (showingQuestion) {
             carouselCardText.textContent = currentCard.question;
             const colorName = hexToString(deck.color);

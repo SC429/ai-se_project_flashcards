@@ -104,7 +104,7 @@
     grid-template-areas:
       "card  card  card"
       "left  flip  right";
-    grid-template-columns: 1fr auto 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     column-gap: 0;
     row-gap: 32px;
   }
