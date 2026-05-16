@@ -6,6 +6,8 @@
 
 Check out [this project](https://sc429.github.io/ai-se_project_flashcards/)
 
+Check out [this video](https://drive.google.com/file/d/1aU6cKgPu8mGtqZZGsPf3wzN9vFyp-9qH/view?usp=sharing), where I describe my project and some challenges I faced while building it.
+
 ## Feature
 
 #### This app provides multiple features of creating your own deck and adding content to help you study.
