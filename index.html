@@ -84,6 +84,49 @@
           <button class="carousel__btn_type_flip carousel__btn" type="submit" aria-label="Flip the card."><img alt="Flip the card." src="assets/images/flip.svg"></button>
         </div>
       </div>
+      <section class="new-deck-view" id="new-deck-view">
+        <h2 class="new-deck-view__title text-style">New Deck</h2>
+        <form class="new-deck-view__form" id="new-deck-form">
+          <!-- The color picker from the task -->
+           <fieldset>
+            <legend class="new-deck-view__legend">Pick the deck color</legend>
+            <label class="new-deck-view__color-label" for="green">
+              <input id="green" class="new-deck-view__color-input new-deck-view__color-input_color_green" aria-label="green" name="color" value="#64d583" type="radio" checked/>
+            </label>
+            <label class="new-deck-view__color-label" for="blue">
+              <input id="blue" class="new-deck-view__color-input new-deck-view__color-input_color_blue" aria-label="blue" name="color" value="#91a8f9"  type="radio"/>
+            </label>
+            <label class="new-deck-view__color-label" for="purple">
+              <input id="purple" class="new-deck-view__color-input new-deck-view__color-input_color_purple" aria-label="purple" name="color" value="#aa8ef0" type="radio"/>
+            </label>
+            <label class="new-deck-view__color-label" for="pink">
+              <input id="pink" class="new-deck-view__color-input new-deck-view__color-input_color_pink" aria-label="pink" name="color" value="#ee92d7" type="radio"/>
+            </label>
+            <label class="new-deck-view__color-label" for="orange">
+              <input id="orange" class="new-deck-view__color-input new-deck-view__color-input_color_orange" aria-label="orange" name="color" value="#ee955e" type="radio"/>
+            </label>
+            <label class="new-deck-view__color-label" for="yellow">
+              <input id="yellow" class="new-deck-view__color-input new-deck-view__color-input_color_yellow" aria-label="yellow" name="color" value="#f5d770" type="radio"/>
+            </label>
+           </fieldset>
+          <!-- A label wrapping a textarea -->
+           <label class="new-deck-view__form__label text-style" for="deck-name">
+            Write the JSON array of cards so that it matches this schema
+            <textarea id="deck-name" class="new-deck-view__textarea" placeholder='{
+  "name": "Deck Name",
+  "cards": [
+    {
+      "question": "Question?",
+      "answer": "Answer"
+    },
+    ...
+  ]
+}'></textarea>
+           </label>
+          <!-- A submission button -->
+           <button class="new-deck-view__submit-btn" type="submit">Create the Deck</button>
+        </form>
+      </section>
       <section id="not-found" class="not-found">
         <h2 class="not-found__title">404 Not Found</h2>
         <p class="not-found__text">Oops! We can't find that.</p>

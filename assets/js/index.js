@@ -7,10 +7,12 @@ import { renderDeckView, setCurrentDeck } from "./deck-view.js";
 const pageEl = document.querySelector('.page');
 const homeSection = document.querySelector('#home');
 const deckViewSection = document.querySelector('#deck-view');
+const newDeckViewSection = document.querySelector('#new-deck-view');
 const carouselSection = document.querySelector('.carousel');
 const notFoundSection = document.querySelector('.not-found');
 const deckTemplate = document.querySelector('#deck-template');
 const deckListEl = homeSection.querySelector('.gallery__list ul');
+const newDeckBtn = document.querySelector('#home .gallery__new-deck-btn');
 
 // build a single deck tile for the home gallery
 function createDeckEl(deck) {
@@ -44,10 +46,14 @@ function renderHome() {
     decks.forEach((deck) => {
         deckListEl.appendChild(createDeckEl(deck));
     });
+
+    newDeckBtn.addEventListener('click', () => {
+        window.location.hash = '#new-deck';
+    });
 }
 
 function showSection(sectionToShow) {
-    [homeSection, deckViewSection, carouselSection, notFoundSection].forEach((section) => {
+    [homeSection, deckViewSection, carouselSection, notFoundSection, newDeckViewSection].forEach((section) => {
         if (section) section.style.display = 'none';
     });
     if (sectionToShow) sectionToShow.style.display = '';
@@ -82,6 +88,12 @@ function renderSection() {
         } else {
             window.location.hash = '#not-found';
         }
+        return;
+    }
+
+    if (hash === '#new-deck') {
+        pageEl.classList.add('page_no-mobile-bar');
+        showSection(newDeckViewSection);
         return;
     }
 

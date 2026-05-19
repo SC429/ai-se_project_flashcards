@@ -1,0 +1,116 @@
+.new-deck-view__title {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  color: #1a1a1a;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1;
+  padding-bottom: 32px;
+}
+
+.new-deck-view__form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 720px;
+}
+
+.new-deck-view__form fieldset {
+  border: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.new-deck-view__legend {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  color: #1a1a1a;
+  font-size: 16px;
+  font-weight: 500;
+  padding-bottom: 12px;
+}
+
+.new-deck-view__color-input {
+  appearance: none;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+  border-radius: 4px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.new-deck-view__color-input:checked {
+  outline: 2px solid rgb(0 0 0 / 0.5);
+  outline-offset: 2px;
+}
+
+.new-deck-view__form__label {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 16px;
+}
+
+.new-deck-view__textarea {
+  width: fixed;
+  min-height: 220px;
+  max-width: 670px;
+  width: fill;
+  box-sizing: border-box;
+  border-radius: 12px;
+  border: 1px solid #1a1a1a;
+  padding: 16px 20px;
+  background-color: #fff;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.new-deck-view__textarea::placeholder {
+  color: #1a1a1a80;
+  white-space: pre;
+}
+
+.new-deck-view__submit-btn {
+  align-self: flex-start;
+  background-color: #a8a8a8;
+  color: #fff;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  border-style: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  cursor: pointer;
+}
+
+.new-deck-view__submit-btn:hover {
+  background-color: #8f8f8f;
+}
+
+#new-deck-form .new-deck-view__color-input_color_green {
+  background-color: #64d583;
+}
+
+#new-deck-form .new-deck-view__color-input_color_blue {
+  background-color: #91a8f9;
+}
+
+#new-deck-form .new-deck-view__color-input_color_purple {
+  background-color: #aa8ef0;
+}
+
+#new-deck-form .new-deck-view__color-input_color_pink {
+  background-color: #ee92d7;
+}
+
+#new-deck-form .new-deck-view__color-input_color_orange {
+  background-color: #ee955e;
+}
+
+#new-deck-form .new-deck-view__color-input_color_yellow {
+  background-color: #f5d770;
+}
