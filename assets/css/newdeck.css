@@ -1,3 +1,9 @@
+.new-deck-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .new-deck-view__title {
   font-family: "Inter", Arial, Helvetica, sans-serif;
   color: #1a1a1a;
@@ -8,10 +14,10 @@
 }
 
 .new-deck-view__form {
-  display: flex;
   flex-direction: column;
   gap: 24px;
   max-width: 720px;
+  width: 100%;
 }
 
 .new-deck-view__form fieldset {

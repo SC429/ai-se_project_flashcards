@@ -48,7 +48,7 @@ function renderHome() {
     });
 
     newDeckBtn.addEventListener('click', () => {
-        window.location.hash = '#new-deck';
+        window.location.hash = '#new-deck-view';
     });
 }
 
@@ -91,7 +91,7 @@ function renderSection() {
         return;
     }
 
-    if (hash === '#new-deck') {
+    if (hash === '#new-deck-view') {
         pageEl.classList.add('page_no-mobile-bar');
         showSection(newDeckViewSection);
         return;
