@@ -131,3 +131,56 @@
 #new-deck-form .new-deck-view__color-input_color_yellow {
   background-color: #f5d770;
 }
+
+@media (max-width: 768px) {
+  .new-deck-view__title {
+    font-size: 32px;
+    padding-bottom: 24px;
+  }
+
+  .new-deck-view__form {
+    gap: 20px;
+  }
+
+  .new-deck-view__legend {
+    font-size: 15px;
+    padding-bottom: 8px;
+  }
+
+  .new-deck-view__form__label {
+    font-size: 15px;
+    gap: 10px;
+  }
+
+  .new-deck-view__textarea {
+    min-height: 320px;
+    padding: 14px 16px;
+    font-size: 13px;
+  }
+
+  .new-deck-view__submit-btn {
+    align-self: stretch;
+    width: 100%;
+    padding: 18px;
+    font-size: 18px;
+    border-radius: 12px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .new-deck-view__title {
+    font-size: 28px;
+    padding-bottom: 20px;
+  }
+
+  .new-deck-view__textarea {
+    min-height: 280px;
+    font-size: 12px;
+  }
+
+  .new-deck-view__submit-btn {
+    padding: 16px;
+    font-size: 16px;
+  }
+}
