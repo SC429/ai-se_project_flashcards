@@ -11,9 +11,14 @@
   font-size: 40px;
   line-height: 1;
   padding-bottom: 32px;
+  width: 100%;
+  max-width: 720px;
+  text-align: left;
+  margin: 0;
 }
 
 .new-deck-view__form {
+  display: flex;
   flex-direction: column;
   gap: 24px;
   max-width: 720px;
@@ -60,10 +65,8 @@
 }
 
 .new-deck-view__textarea {
-  width: fixed;
+  width: 100%;
   min-height: 220px;
-  max-width: 670px;
-  width: fill;
   box-sizing: border-box;
   border-radius: 12px;
   border: 1px solid #1a1a1a;
@@ -95,6 +98,14 @@
 
 .new-deck-view__submit-btn:hover {
   background-color: #8f8f8f;
+}
+
+.new-deck-view__submit-btn_active {
+  background-color: #1a1a1a;
+}
+
+.new-deck-view__submit-btn_active:hover {
+  background-color: #000;
 }
 
 #new-deck-form .new-deck-view__color-input_color_green {

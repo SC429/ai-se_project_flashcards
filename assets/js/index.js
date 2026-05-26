@@ -48,7 +48,7 @@ function renderHome() {
     });
 
     newDeckBtn.addEventListener('click', () => {
-        window.location.hash = '#new-deck-view';
+        window.location.hash = '#new-deck';
     });
 }
 
@@ -91,7 +91,7 @@ function renderSection() {
         return;
     }
 
-    if (hash === '#new-deck-view') {
+    if (hash === '#new-deck') {
         pageEl.classList.add('page_no-mobile-bar');
         showSection(newDeckViewSection);
         return;
@@ -106,7 +106,17 @@ function renderSection() {
     window.location.hash = '#not-found';
 }
 
+function setupNewDeckForm() {
+    const textarea = newDeckViewSection.querySelector('#deck-name');
+    const submitBtn = newDeckViewSection.querySelector('.new-deck-view__submit-btn');
+
+    textarea.addEventListener('input', () => {
+        submitBtn.classList.toggle('new-deck-view__submit-btn_active', textarea.value.trim().length > 0);
+    });
+}
+
 renderHome();
+setupNewDeckForm();
 renderSection();
 
 // render the section if browser's hash change
