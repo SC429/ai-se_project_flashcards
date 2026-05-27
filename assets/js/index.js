@@ -2,6 +2,7 @@ import { decks, getDeckByID } from "./decks.js";
 import { renderCarouselView } from "./carousel.js";
 import { hexToString } from "./colorMap.js";
 import { renderDeckView, setCurrentDeck } from "./deck-view.js";
+import { disableSubmitBtn } from "./new-deck-view.js";
 
 // select the elements for each section
 const pageEl = document.querySelector('.page');
@@ -94,6 +95,7 @@ function renderSection() {
     if (hash === '#new-deck') {
         pageEl.classList.add('page_no-mobile-bar');
         showSection(newDeckViewSection);
+        disableSubmitBtn();
         return;
     }
 
