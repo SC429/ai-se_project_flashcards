@@ -34,8 +34,8 @@ function createDeckEl(deck) {
 
     deleteBtn.setAttribute('data-deckId', deck.id);
     deleteBtn.addEventListener('click', (event) => {
-        event.stopPropagation();
-        event.preventDefault();
+        event.stopPropagation(); // ensures that the click event doesn't also trigger the parent element event listener
+        event.preventDefault(); // prevent the page from reloading when the button is clicked
         cardEl.remove();
     });
 
@@ -109,7 +109,7 @@ function renderSection() {
 }
 
 function setupNewDeckForm() {
-    const textarea = newDeckViewSection.querySelector('#deck-name');
+    const textarea = newDeckViewSection.querySelector('#deck-data');
     const submitBtn = newDeckViewSection.querySelector('.new-deck-view__submit-btn');
 
     textarea.addEventListener('input', () => {

@@ -110,9 +110,9 @@
             </label>
            </fieldset>
           <!-- A label wrapping a textarea -->
-           <label class="new-deck-view__form__label text-style" for="deck-name">
+           <label class="new-deck-view__form__label text-style" for="deck-data">
             Write the JSON array of cards so that it matches this schema
-            <textarea id="deck-name" class="new-deck-view__textarea" placeholder='{
+            <textarea id="deck-data" name="deck-data" class="new-deck-view__textarea" placeholder='{
   "name": "Deck Name",
   "cards": [
     {
@@ -131,6 +131,13 @@
         <h2 class="not-found__title">404 Not Found</h2>
         <p class="not-found__text">Oops! We can't find that.</p>
       </section>
+      <div class="modal" id="modal__container">
+        <div class="modal__content">
+          <h2 class="modal__title">Error</h2>
+          <p class="modal__error-msg"></p>
+          <button type="button" class="modal__close-btn" aria-label="Close modal">&times;</button>
+        </div>
+      </div>
       <script type="module" src="assets/js/index.js"></script>
       <script type="module" src="assets/js/new-deck-view.js"></script>
     </main>
