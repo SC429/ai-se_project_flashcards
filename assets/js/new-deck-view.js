@@ -66,12 +66,18 @@ form.addEventListener("submit", function(e) {
         return;
     }
 
-    const color = normalizeColor(formValues.color);
+    const colorValue = normalizeColor(formValues.color);
+
+    if (typeof jsonData.color === "string" && jsonData.color.toLowerCase() !== colorValue) {
+        showError(`The "color" in your JSON (${jsonData.color}) doesn't match the color picker (${colorValue}). Please update one to match the other.`);
+        return;
+    }
+
     const id = `${slugify(jsonData["name"])}-${Date.now()}`;
 
     decks.push({
         id,
-        color,
+        color: colorValue,
         name: jsonData["name"],
         cards: jsonData["cards"],
     });
