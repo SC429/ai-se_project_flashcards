@@ -3,6 +3,7 @@ import { renderCarouselView } from "./carousel.js";
 import { hexToString } from "./colorMap.js";
 import { renderDeckView, setCurrentDeck } from "./deck-view.js";
 import { disableSubmitBtn } from "./new-deck-view.js";
+import { getDecks } from "./api.js";
 
 // select the elements for each section
 const pageEl = document.querySelector('.page');
@@ -44,12 +45,22 @@ function createDeckEl(deck) {
 
 function renderHome() {
     deckListEl.replaceChildren();
-    decks.forEach((deck) => {
-        deckListEl.appendChild(createDeckEl(deck));
-    });
+    newDeckBtn.style.display = 'none'; // hide the new deck button until decks are loaded
 
-    newDeckBtn.addEventListener('click', () => {
-        window.location.hash = '#new-deck';
+    getDecks().then((decks) => {
+        decks.forEach((deck) => {
+            deckListEl.appendChild(createDeckEl(deck));
+        });
+    }).catch((error) => {
+        console.error('Error fetching decks:', error);
+    }).finally(() => {
+        renderSection();
+
+        // show the new deck button after decks are loaded
+        newDeckBtn.style.display = '';
+        newDeckBtn.addEventListener('click', () => {
+            window.location.hash = '#new-deck';
+        });
     });
 }
 
@@ -119,7 +130,7 @@ function setupNewDeckForm() {
 
 renderHome();
 setupNewDeckForm();
-renderSection();
+// renderSection();
 
 // render the section if browser's hash change
 window.addEventListener('hashchange', renderSection);
