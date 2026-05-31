@@ -192,8 +192,6 @@ function setupNewDeckForm() {
 }
 
 renderHome();
-// setupNewDeckForm();
-// renderSection();
 
 // render the section if browser's hash change
 window.addEventListener('hashchange', renderSection);

@@ -63,8 +63,8 @@ form.addEventListener("submit", function(e) {
         color: colorValue,
         cards: jsonData.cards
     }).then((newDeck) => {
-        console.log("Deck added successfully:", newDeck);
-        fetchedDecks.push({ ...newDeck, cards: newDeck.cards ?? jsonData.cards });
+        newDeck.cards = jsonData.cards; // ensure cards are included in the new deck object if the API response doesn't include them
+        fetchedDecks.push(newDeck);
         window.location.hash = `#deck/${newDeck._id}`;
     }).catch((error) => {
         console.error("Error adding deck:", error);
