@@ -51,6 +51,14 @@ On a smaller screen like a phone, the decks and cards are displayed in a stack v
 
 ![Carousel View - Small Screen](assets/images/smallcarouselview.png)
 
+5. Asynchronous Design
+
+- To improve the responsiveness and loading time of the application, asynchronous functions are being used to render the decks and cards. Asynchronous functions allow for the webpage to load first while the decks and cards are still being created and loading in the background. This helps prevent any stalling of the webpage as other static display like the header and footer can render without having to wait for the dynamic view of the cards and decks to render first.
+
+6. Add New Deck
+
+- When adding a new deck, an user can click on the "+ New Deck" button located at the end of the decks section. This will allow for the inputting of the color as well as JSON data info for the new deck.
+
 ## Technologies used
 
 #### The app mainly uses a combination of HTML and CSS for frontend and Javascript for backend. The specific topics are using media queries to create dynamic views for different screen views and CSS grid layouts to position the cards/decks.

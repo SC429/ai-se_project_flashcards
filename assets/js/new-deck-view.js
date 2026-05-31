@@ -1,5 +1,6 @@
 import { fetchedDecks } from "./decks.js";
 import { addDeck } from "./api.js";
+import { renderDeckView } from "./deck-view.js";
 
 const HEX_DIGITS = /^[0-9a-fA-F]{6}$/;
 
@@ -63,7 +64,7 @@ form.addEventListener("submit", function(e) {
         name: jsonData.name,
         cards: jsonData.cards
     }).then((newDeck) => {
-        fetchedDecks.push(newDeck);
+        fetchedDecks.push({ ...newDeck, cards: newDeck.cards ?? jsonData.cards });
         window.location.hash = `#deck/${newDeck._id}`;
     }).catch((error) => {
         console.error("Error adding deck:", error);

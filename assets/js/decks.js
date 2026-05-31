@@ -1,4 +1,4 @@
-export const fetchedDecks = [];
+export let fetchedDecks = [];
 
 /**
  * Retrieves a deck object by its ID from the fetchedDecks array.

@@ -63,15 +63,20 @@ function createDeckEl(deck) {
  * @returns {None}
  */
 
+function renderGallery() {
+    deckListEl.replaceChildren();
+    fetchedDecks.forEach((deck) => {
+        deckListEl.appendChild(createDeckEl(deck));
+    });
+}
+
 function renderHome() {
     deckListEl.replaceChildren();
     newDeckBtn.style.display = 'none'; // hide the new deck button until decks are loaded
 
     getDecks().then((decks) => {
         fetchedDecks.push(...decks);
-        decks.forEach((deck) => {
-            deckListEl.appendChild(createDeckEl(deck));
-        });
+        renderGallery();
     }).catch((error) => {
         console.error('Error fetching decks:', error);
     }).finally(() => {
@@ -110,6 +115,7 @@ function renderSection() {
 
     if (hash === '' || hash === '#home' || hash === '#decks') {
         pageEl.classList.remove('page_no-mobile-bar');
+        renderGallery();
         showSection(homeSection);
         return;
     }
