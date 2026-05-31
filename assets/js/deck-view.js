@@ -9,6 +9,11 @@ const practiceBtn = deckViewSection.querySelector('.gallery__practice-btn');
 
 let currentDeck = null;
 
+/**
+ * Set the current deck
+ * @param {Object} deck 
+ */
+
 export function setCurrentDeck(deck) {
     currentDeck = deck;
 }
@@ -16,6 +21,13 @@ export function setCurrentDeck(deck) {
 practiceBtn.addEventListener('click', () => {
     window.location.hash = `#carousel/${currentDeck._id}`;
 });
+
+/**
+ * Create a new card element for each card in the deck
+ * @param {Array} card 
+ * @param {Object} deck 
+ * @returns 
+ */
 
 function createCardEl(card, deck) {
 
@@ -49,6 +61,11 @@ function createCardEl(card, deck) {
 
     return cardTempClone;
 }
+
+/**
+ * Show the gallery view for all the cards in the deck
+ * @param {Object} deck 
+ */
 
 export function renderDeckView(deck) {
     pageEl.classList.remove('page_no-mobile-bar'); // remove the class if its not mobile view

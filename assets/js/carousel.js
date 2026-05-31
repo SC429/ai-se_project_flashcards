@@ -1,5 +1,11 @@
 import { removeColorClasses, hexToString } from "./colorMap.js";
 
+/**
+ * Display cards for a specific deck in a carousel view
+ * @param {Object} deck 
+ * @returns {None}
+ */
+
 function renderCarouselView(deck) {
     let currentIndex = 0;
     let showingQuestion = true;
@@ -39,7 +45,11 @@ function renderCarouselView(deck) {
         }
     }
 
-    // update the display when button is clicked
+    /**
+     * Create a dynamic view of the current card in the carousel. Add functionality on the flip button.
+     * @param {None}
+     * @returns {None}
+     */
     function updateDisplay() {
         removeColorClasses(carouselCardElement);
         currentCard = deck.cards[currentIndex];

@@ -1,4 +1,4 @@
-import { decks, getDeckByID, fetchedDecks } from "./decks.js";
+import { getDeckByID, fetchedDecks } from "./decks.js";
 import { renderCarouselView } from "./carousel.js";
 import { hexToString } from "./colorMap.js";
 import { renderDeckView, setCurrentDeck } from "./deck-view.js";
@@ -15,8 +15,14 @@ const notFoundSection = document.querySelector('.not-found');
 const deckTemplate = document.querySelector('#deck-template');
 const deckListEl = homeSection.querySelector('.gallery__list ul');
 const newDeckBtn = document.querySelector('#home .gallery__new-deck-btn');
+const aboutSection = document.querySelector('#about');
 
-// build a single deck tile for the home gallery
+/**
+ * Clone the deck template for dynamic use
+ * @param {Object} deck 
+ * @returns {Object} deckClone
+ * */
+
 function createDeckEl(deck) {
     const deckClone = deckTemplate.content.cloneNode(true);
     const cardEl = deckClone.querySelector('.card');
@@ -51,6 +57,12 @@ function createDeckEl(deck) {
     return deckClone;
 }
 
+/**
+ * Render the initial view when loading into the webpage
+ * @param {None}
+ * @returns {None}
+ */
+
 function renderHome() {
     deckListEl.replaceChildren();
     newDeckBtn.style.display = 'none'; // hide the new deck button until decks are loaded
@@ -73,12 +85,25 @@ function renderHome() {
     });
 }
 
+
+/**
+ * Display the correct section based on hashing
+ * @param {Object} sectionToShow
+ * @returns {None}
+ */
+
 function showSection(sectionToShow) {
-    [homeSection, deckViewSection, carouselSection, notFoundSection, newDeckViewSection].forEach((section) => {
+    [homeSection, aboutSection, deckViewSection, carouselSection, notFoundSection, newDeckViewSection].forEach((section) => {
         if (section) section.style.display = 'none';
     });
     if (sectionToShow) sectionToShow.style.display = '';
 }
+
+/**
+ * A helper function to render the page based on if mobile view or desktop view.
+ * It calls showSection() based on the window hash.
+ * @returns {None}
+ */
 
 function renderSection() {
     const hash = window.location.hash;
@@ -86,6 +111,12 @@ function renderSection() {
     if (hash === '' || hash === '#home' || hash === '#decks') {
         pageEl.classList.remove('page_no-mobile-bar');
         showSection(homeSection);
+        return;
+    }
+
+    if (hash === '#about') {
+        pageEl.classList.remove('page_no-mobile-bar');
+        showSection(aboutSection);
         return;
     }
 
@@ -127,6 +158,12 @@ function renderSection() {
 
     window.location.hash = '#not-found';
 }
+
+/**
+ * It sets up the new form view for adding a new deck.
+ * @param {None}
+ * @returns {None}
+ */
 
 function setupNewDeckForm() {
     const textarea = newDeckViewSection.querySelector('#deck-data');
