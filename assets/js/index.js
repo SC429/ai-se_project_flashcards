@@ -151,6 +151,7 @@ function renderSection() {
 
     if (hash === '#new-deck') {
         pageEl.classList.add('page_no-mobile-bar');
+        setupNewDeckForm();
         showSection(newDeckViewSection);
         disableSubmitBtn();
         return;
@@ -174,6 +175,16 @@ function renderSection() {
 function setupNewDeckForm() {
     const textarea = newDeckViewSection.querySelector('#deck-data');
     const submitBtn = newDeckViewSection.querySelector('.new-deck-view__submit-btn');
+    const colorInput = newDeckViewSection.querySelectorAll('.new-deck-view__color-input');
+    if (colorInput) {
+        colorInput.forEach(input => {
+            input.checked = false;
+        });
+        colorInput[0].checked = true; // set the default color to the first option
+    };
+    textarea.value = '';
+    submitBtn.classList.remove('new-deck-view__submit-btn_active');
+    submitBtn.disabled = true;
 
     textarea.addEventListener('input', () => {
         submitBtn.classList.toggle('new-deck-view__submit-btn_active', textarea.value.trim().length > 0);
@@ -181,7 +192,7 @@ function setupNewDeckForm() {
 }
 
 renderHome();
-setupNewDeckForm();
+// setupNewDeckForm();
 // renderSection();
 
 // render the section if browser's hash change
