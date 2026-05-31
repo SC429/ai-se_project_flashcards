@@ -14,7 +14,7 @@ export function setCurrentDeck(deck) {
 }
 
 practiceBtn.addEventListener('click', () => {
-    window.location.hash = `#carousel/${currentDeck.id}`;
+    window.location.hash = `#carousel/${currentDeck._id}`;
 });
 
 function createCardEl(card, deck) {

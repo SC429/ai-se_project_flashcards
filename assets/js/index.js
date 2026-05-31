@@ -1,9 +1,9 @@
-import { decks, getDeckByID } from "./decks.js";
+import { decks, getDeckByID, fetchedDecks } from "./decks.js";
 import { renderCarouselView } from "./carousel.js";
 import { hexToString } from "./colorMap.js";
 import { renderDeckView, setCurrentDeck } from "./deck-view.js";
 import { disableSubmitBtn } from "./new-deck-view.js";
-import { getDecks } from "./api.js";
+import { getDecks, deleteDeck } from "./api.js";
 
 // select the elements for each section
 const pageEl = document.querySelector('.page');
@@ -28,16 +28,24 @@ function createDeckEl(deck) {
     cardEl.classList.add(`card_color_${hexToString(deck.color)}`);
     titleEl.textContent = deck.name;
     countEl.textContent = `${deck.cards ? deck.cards.length : 0} cards`;
-    linkEl.setAttribute('href', `#deck/${deck.id}`);
+    linkEl.setAttribute('href', `#deck/${deck._id}`);
     linkEl.addEventListener('click', () => {
         setCurrentDeck(deck);
     });
 
-    deleteBtn.setAttribute('data-deckId', deck.id);
+    deleteBtn.setAttribute('data-deckId', deck._id);
     deleteBtn.addEventListener('click', (event) => {
         event.stopPropagation(); // ensures that the click event doesn't also trigger the parent element event listener
         event.preventDefault(); // prevent the page from reloading when the button is clicked
-        cardEl.remove();
+        deleteDeck(deck._id).then(() => {
+            cardEl.remove();
+            removedDeckIndex = fetchedDecks.findIndex((d) => d._id === deck._id);
+            if (removedDeckIndex !== -1) {
+                fetchedDecks.splice(removedDeckIndex, 1);
+            }
+        }).catch((error) => {
+            console.error('Error deleting deck:', error);
+        });
     });
 
     return deckClone;
@@ -48,6 +56,7 @@ function renderHome() {
     newDeckBtn.style.display = 'none'; // hide the new deck button until decks are loaded
 
     getDecks().then((decks) => {
+        fetchedDecks.push(...decks);
         decks.forEach((deck) => {
             deckListEl.appendChild(createDeckEl(deck));
         });
