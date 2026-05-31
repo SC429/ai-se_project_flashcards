@@ -1,4 +1,5 @@
-import { decks } from "./decks.js";
+import { decks, fetchedDecks } from "./decks.js";
+import { addDeck } from "./api.js";
 
 const HEX_DIGITS = /^[0-9a-fA-F]{6}$/;
 
@@ -75,14 +76,18 @@ form.addEventListener("submit", function(e) {
 
     const id = `${slugify(jsonData["name"])}-${Date.now()}`;
 
-    decks.push({
-        id,
+    addDeck({
+        _id: id,
         color: colorValue,
-        name: jsonData["name"],
-        cards: jsonData["cards"],
+        name: jsonData.name,
+        cards: jsonData.cards
+    }).then((newDeck) => {
+        fetchedDecks.push(newDeck);
+        window.location.hash = `#deck/${newDeck._id}`;
+    }).catch((error) => {
+        console.error("Error adding deck:", error);
+        showError("There was an error saving your deck. Please try again.");
     });
-
-    window.location.hash = "deck/" + id;
 });
 
 const modal = document.querySelector('#modal__container');

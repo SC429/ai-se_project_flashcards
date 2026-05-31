@@ -21,3 +21,11 @@ export function deleteDeck(deckId) {
     headers
   }).then(processResponse);
 }
+
+export function addDeck({ name, color, cards }) {
+  return fetch(`${baseUrl}/decks`, {
+    method: "POST",
+    body: JSON.stringify({ name, color, cards }),
+    headers
+  }).then(processResponse);
+}
