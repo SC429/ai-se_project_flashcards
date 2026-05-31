@@ -18,6 +18,6 @@ export function getDecks() {
 export function deleteDeck(deckId) {
   return fetch(`${baseUrl}/decks/${deckId}`, {
     method: "DELETE",
-    headers: { headers}
+    headers
   }).then(processResponse);
 }

@@ -39,7 +39,7 @@ function createDeckEl(deck) {
         event.preventDefault(); // prevent the page from reloading when the button is clicked
         deleteDeck(deck._id).then(() => {
             cardEl.remove();
-            removedDeckIndex = fetchedDecks.findIndex((d) => d._id === deck._id);
+            const removedDeckIndex = fetchedDecks.findIndex((d) => d._id === deck._id);
             if (removedDeckIndex !== -1) {
                 fetchedDecks.splice(removedDeckIndex, 1);
             }
