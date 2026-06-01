@@ -185,9 +185,11 @@ function setupNewDeckForm() {
     submitBtn.classList.remove('new-deck-view__submit-btn_active');
     submitBtn.disabled = true;
 
-    textarea.addEventListener('input', () => {
-        submitBtn.classList.toggle('new-deck-view__submit-btn_active', textarea.value.trim().length > 0);
-    });
+    textarea.addEventListener("input", () => {
+        const hasContent = textarea.value.trim().length > 0;
+        submitBtn.classList.toggle("new-deck-view__submit-btn_active", hasContent);
+        submitBtn.disabled = !hasContent; // re-enable when content exists
+  });
 }
 
 renderHome();
