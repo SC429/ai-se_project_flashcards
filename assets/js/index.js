@@ -1,9 +1,10 @@
-import { getDeckByID, fetchedDecks } from "./decks.js";
+import { getDeckByID, fetchedDecks, removeDeckByID } from "./decks.js";
 import { renderCarouselView } from "./carousel.js";
 import { hexToString } from "./colorMap.js";
 import { renderDeckView, setCurrentDeck } from "./deck-view.js";
 import { disableSubmitBtn } from "./new-deck-view.js";
 import { getDecks, deleteDeck } from "./api.js";
+import { showError } from "./new-deck-view.js";
 
 // select the elements for each section
 const pageEl = document.querySelector('.page');
@@ -45,12 +46,12 @@ function createDeckEl(deck) {
         event.preventDefault(); // prevent the page from reloading when the button is clicked
         deleteDeck(deck._id).then(() => {
             cardEl.remove();
-            const removedDeckIndex = fetchedDecks.findIndex((d) => d._id === deck._id);
-            if (removedDeckIndex !== -1) {
-                fetchedDecks.splice(removedDeckIndex, 1);
+            removeDeckByID(deck._id);
+            if (window.location.hash === `#deck/${deck._id}`) {
+                window.location.hash = '#home';
             }
         }).catch((error) => {
-            console.error('Error deleting deck:', error);
+            showError("There was an error deleting the deck. Please try again. " + error);
         });
     });
 
@@ -59,8 +60,7 @@ function createDeckEl(deck) {
 
 /**
  * Render the initial view when loading into the webpage
- * @param {None}
- * @returns {None}
+ * @returns {void}
  */
 
 function renderGallery() {
@@ -78,7 +78,7 @@ function renderHome() {
         fetchedDecks.push(...decks);
         renderGallery();
     }).catch((error) => {
-        console.error('Error fetching decks:', error);
+        showError("There was an error loading the decks. Please try again. " + error);
     }).finally(() => {
         renderSection();
 
@@ -94,7 +94,7 @@ function renderHome() {
 /**
  * Display the correct section based on hashing
  * @param {Object} sectionToShow
- * @returns {None}
+ * @returns {void}
  */
 
 function showSection(sectionToShow) {
@@ -107,7 +107,7 @@ function showSection(sectionToShow) {
 /**
  * A helper function to render the page based on if mobile view or desktop view.
  * It calls showSection() based on the window hash.
- * @returns {None}
+ * @returns {void}
  */
 
 function renderSection() {
@@ -168,8 +168,7 @@ function renderSection() {
 
 /**
  * It sets up the new form view for adding a new deck.
- * @param {None}
- * @returns {None}
+ * @returns {void}
  */
 
 function setupNewDeckForm() {

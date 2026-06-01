@@ -3,7 +3,7 @@ import { removeColorClasses, hexToString } from "./colorMap.js";
 /**
  * Display cards for a specific deck in a carousel view
  * @param {Object} deck 
- * @returns {None}
+ * @returns {void}
  */
 
 function renderCarouselView(deck) {
@@ -18,19 +18,30 @@ function renderCarouselView(deck) {
     const rightBtn = document.querySelector(".carousel__btn_type_right");
     const flipBtn = document.querySelector(".carousel__btn_type_flip");
 
-    // disable the button
+    /**
+     * Disable a button by adding the disabled attribute and a CSS class for styling
+     * @param {Object} buttonEl
+     * @returns {void}
+     */
     function disableButton(buttonEl) {
         buttonEl.classList.add("carousel__btn_disabled");
         buttonEl.disabled = true;
     }
 
-    // enable the button
+    /**
+     * Enable a button by removing the disabled attribute and the CSS class for styling
+     * @param {Object} buttonEl
+     * @returns {void}
+     */
     function enableButton(buttonEl) {
         buttonEl.classList.remove("carousel__btn_disabled");
         buttonEl.removeAttribute("disabled");
     }
 
-    // toggle the buttons
+    /** 
+     * Update the visibility of the arrow buttons based on the current index
+     * @returns {void}
+     */
     function updateArrows() {
         if (currentIndex === 0) {
             disableButton(leftBtn);
@@ -47,8 +58,7 @@ function renderCarouselView(deck) {
 
     /**
      * Create a dynamic view of the current card in the carousel. Add functionality on the flip button.
-     * @param {None}
-     * @returns {None}
+     * @returns {void}
      */
     function updateDisplay() {
         removeColorClasses(carouselCardElement);

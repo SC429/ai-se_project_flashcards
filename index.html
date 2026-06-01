@@ -33,6 +33,17 @@
         <h2 class="about__title text-style">About This App</h2>
         <p class="about__text">This is a flashcard app for web development topics. You can create your own decks of flashcards and practice them in a carousel view. The app is built with vanilla JavaScript, HTML, and CSS, and uses localStorage to save your decks.</p>
         <p class="about__text">To get started, click on "My Decks" to view your existing decks or create a new one.</p>
+        <p class="about__text">When creating a new deck, provide a JSON object that matches this schema:</p>
+        <pre class="about__code"><code class="about__code-content">{
+  "name": "Deck Name",
+  "cards": [
+    {
+      "question": "Question?",
+      "answer": "Answer"
+    },
+    ...
+  ]
+}</code></pre>
       </section>
       <section id="home" class="gallery">
         <p class="gallery__title text-style">My Decks</p>

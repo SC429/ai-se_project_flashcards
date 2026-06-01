@@ -20,12 +20,16 @@ function normalizeColor(color) {
 
 const form = document.querySelector('#new-deck-form');
 const submitBtn = form.querySelector('.new-deck-view__submit-btn');
-// const textarea = form.querySelector('#deck-data');
 
-// console.log(textarea);
-
+/**
+ * Disable the submit button to prevent multiple submissions while processing the form.
+ * This function can be called after the form is submitted and while waiting for the API response.
+ * It adds a disabled attribute to the submit button and applies a CSS class for visual feedback.
+ *
+ * @returns {void}
+ */
 export function disableSubmitBtn() {
-    submitBtn.disabled = false;
+    submitBtn.disabled = true;
 }
 
 form.addEventListener("submit", function(e) {
@@ -76,10 +80,20 @@ const modal = document.querySelector('#modal__container');
 const modalErrorMsg = modal.querySelector('.modal__error-msg');
 const modalCloseBtn = modal.querySelector('.modal__close-btn');
 
+/**
+ * Open a modal dialog by adding a CSS class to make it visible. This can be used to display error messages or other important information to the user.
+ * @param {Object} modalEl - The DOM element representing the modal dialog to be opened.
+ * @returns {void}
+ */
 function openModal(modal) {
     modal.classList.add("modal_visible");
 }
 
+/**
+ * Close a modal dialog by removing the CSS class that makes it visible. This can be used to hide the modal after the user has acknowledged the message or taken an action.
+ * @param {Object} modalEl - The DOM element representing the modal dialog to be closed.
+ * @returns {void}
+ */
 function closeModal(modal) {
     modal.classList.remove("modal_visible");
 }
@@ -89,7 +103,12 @@ modalCloseBtn.addEventListener("click", function(event) {
     closeModal(modal);
 })
 
-function showError(msg) {
+/**
+ * Display an error message in a modal dialog. This function can be called whenever there is an error that needs to be communicated to the user, such as form validation errors or API request failures.
+ * @param {string} msg - The error message to be displayed in the modal dialog.
+ * @returns {void}
+ */
+export function showError(msg) {
     modalErrorMsg.textContent = msg;
     openModal(modal);
 }

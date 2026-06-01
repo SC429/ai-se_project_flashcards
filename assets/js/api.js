@@ -6,8 +6,8 @@ const headers = {
 
 /**
  * Helper function for checking the status of a http request
- * @param {Boolean} res
- * @returns {Array, Promise.object}
+ * @param {Response} res
+ * @returns {Promise<Object>}
  */
 
 function processResponse(res) {
@@ -29,7 +29,7 @@ export function getDecks() {
 /**
  * Submit a DELETE request to delete the deck based on deck ID
  * @param {Number} deckId 
- * @returns {None}
+ * @returns {void}
  */
 
 export function deleteDeck(deckId) {
@@ -44,7 +44,7 @@ export function deleteDeck(deckId) {
  * @param {String} name
  * @param {String} color
  * @param {Array} cards 
- * @returns {None}
+ * @returns {void}
  */
 
 export function addDeck({ name, color, cards }) {
